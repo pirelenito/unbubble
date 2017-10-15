@@ -19,13 +19,13 @@ module.exports = function() {
     .then(response => {
       const $ = cheerio.load(response.data)
 
-      const href = $('.yt-uix-tile-link')
+      const id = $('.yt-uix-tile-link')
         // this stupid map with different signature is from cheerio
         .map((index, result) => $(result).attr('href'))
         .get()
         .find(url => url.match(/watch\?/))
+        .replace(/\/watch\?v=/, '')
 
-      return href
+      return id
     })
-    .then(url => `https://www.youtube.com${url}`)
 }
