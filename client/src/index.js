@@ -32,7 +32,19 @@ class App extends React.Component {
     }
 
     return !id ? (
-      <div>loading</div>
+      <h1
+        style={{
+          color: 'white',
+          fontFamily: 'Helvetica',
+          fontSize: 16,
+          position: 'absolute',
+          top: height / 2 - 16 / 2,
+          width: width,
+          textAlign: 'center',
+        }}
+      >
+        Unwrapping your bubble...
+      </h1>
     ) : (
       <YouTube
         opts={opts}
