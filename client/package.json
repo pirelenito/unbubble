@@ -2,6 +2,7 @@
   "name": "unbubble-space-client",
   "version": "1.0.0",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "build": "sagui build",
     "dist": "sagui dist",
