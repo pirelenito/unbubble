@@ -1,0 +1,12 @@
+{
+  "name": "unbubble-space",
+  "version": "1.0.0",
+  "description": "Finding meaning through chaos.",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd server && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,7 +1,6 @@
 {
-  "name": "client",
+  "name": "unbubble-space-client",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "sagui build",
@@ -17,13 +16,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "sagui": "^11.1.0"
-  },
   "dependencies": {
     "axios": "^0.16.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-youtube": "^7.5.0"
-  }
+    "react-youtube": "^7.5.0",
+    "sagui": "^11.1.0"
+  },
+  "description": ""
 }
