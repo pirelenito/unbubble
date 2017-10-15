@@ -10,6 +10,6 @@ ENV NODE_ENV production
 COPY . /usr/src/app
 RUN cd server && npm install && npm cache clean --force
 RUN cd client && npm install && npm cache clean --force
-RUN cd client && npm run build
+RUN cd client && npm run dist
 
 CMD [ "npm", "start" ]
