@@ -8,7 +8,9 @@ const app = express()
 app.use(express.static(path.join(__dirname, '../../client/dist')))
 
 app.get('/find-random-video', function(req, res) {
-  findRandomVideo().then(id => res.json({ id: id }))
+  findRandomVideo()
+    .then(id => res.json({ id: id }))
+    .catch(() => res.status(500).send('Something broke!'))
 })
 
 app.listen(port, function() {
