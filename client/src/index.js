@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import YouTube from 'react-youtube'
+import YouTube from './YouTube'
 import axios from 'axios'
 
 class App extends React.Component {
@@ -23,14 +23,6 @@ class App extends React.Component {
   render() {
     const { width, height, id } = this.state
 
-    const opts = {
-      height,
-      width,
-      playerVars: {
-        autoplay: 1,
-      },
-    }
-
     return !id ? (
       <h1
         style={{
@@ -47,7 +39,8 @@ class App extends React.Component {
       </h1>
     ) : (
       <YouTube
-        opts={opts}
+        width={width}
+        height={height}
         videoId={id}
         onEnd={() => location.reload()}
         onError={() => location.reload()}
