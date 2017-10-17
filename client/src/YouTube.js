@@ -13,7 +13,6 @@ export default class YouTube extends React.Component {
         events: {
           onReady: () => this.player.playVideo(),
           onStateChange: ({ data }) => {
-            console.log(data)
             if (data === 0) return this.props.onEnd()
           },
           onError: this.props.onError,
