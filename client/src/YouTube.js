@@ -27,6 +27,10 @@ export default class YouTube extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (!this.player) {
+      return
+    }
+
     if (nextProps.height !== this.props.height || nextProps.width !== this.props.width) {
       this.player.setSize(nextProps.width, nextProps.height)
     }
