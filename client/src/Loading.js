@@ -26,7 +26,6 @@ export default class Welcome extends React.Component {
       color: 'white',
       fontSize: 16,
       margin: 0,
-      opacity: 0.5,
       padding: 5,
       position: 'absolute',
       right: 0,
