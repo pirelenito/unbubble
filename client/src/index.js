@@ -7,17 +7,21 @@ class App extends React.Component {
   componentWillMount() {
     window.addEventListener('resize', () => this.updateSize())
     this.updateSize()
+    this.loadNext()
+  }
 
+  updateSize() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight })
+  }
+
+  loadNext() {
+    this.setState({ id: null })
     axios.get('/find-random-video').then(
       response => {
         this.setState({ id: response.data.id })
       },
       () => location.reload()
     )
-  }
-
-  updateSize() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight })
   }
 
   render() {
@@ -42,8 +46,8 @@ class App extends React.Component {
         width={width}
         height={height}
         videoId={id}
-        onEnd={() => location.reload()}
-        onError={() => location.reload()}
+        onEnd={() => this.loadNext()}
+        onError={() => this.loadNext()}
       />
     )
   }
