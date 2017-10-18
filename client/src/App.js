@@ -41,8 +41,7 @@ export default class App extends React.Component {
 
     return [
       <Motion defaultStyle={{ opacity: 1 }} style={{ opacity: spring(id ? 0 : 1) }}>
-        {style =>
-          style.opacity > 0.01 && <Loading width={width} height={height} opacity={style.opacity} />}
+        {style => style.opacity > 0.01 && <Loading opacity={style.opacity} />}
       </Motion>,
       id && (
         <YouTube
