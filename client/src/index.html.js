@@ -8,13 +8,13 @@ export default function({ htmlWebpackPlugin }) {
     <!DOCTYPE html>
     <html>
       <head>
-        <title>Unbubble.space</title>
+        <title>unbubble.space</title>
         <meta name="description" content="Searching videos outside of your bubble…" />
-        <meta property="og:title" content="Unbubble.space" />
+        <meta property="og:title" content="unbubble.space" />
         <meta property="og:description" content="Searching videos outside of your bubble…" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Unbubble.space" />
-        <meta name="twitter:title" content="Unbubble.space" />
+        <meta property="og:site_name" content="unbubble.space" />
+        <meta name="twitter:title" content="unbubble.space" />
         <meta name="twitter:description" content="Searching videos outside of your bubble…" />
         <meta property="og:image" content="http://unbubble.space/${preview}" />
 
