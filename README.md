@@ -16,3 +16,7 @@ Here is how it works:
 - Profit!
 
 If you leave it open, you will continue to experience new content as it goes.
+
+## Credits
+
+- Logo based on [bubbles by Alex Muravev from the Noun Project](https://thenounproject.com/search/?q=bubble&i=1251056).

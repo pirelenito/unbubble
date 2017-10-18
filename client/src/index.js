@@ -1,7 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
-import YouTube from './YouTube'
 import axios from 'axios'
+import YouTube from './YouTube'
+import Loading from './Loading'
 
 class App extends React.Component {
   componentWillMount() {
@@ -28,19 +29,7 @@ class App extends React.Component {
     const { width, height, id } = this.state
 
     return !id ? (
-      <h1
-        style={{
-          color: 'white',
-          fontFamily: 'Helvetica',
-          fontSize: 16,
-          position: 'absolute',
-          top: height / 2 - 16 / 2,
-          width: width,
-          textAlign: 'center',
-        }}
-      >
-        Unwrapping your bubble...
-      </h1>
+      <Loading width={width} height={height} />
     ) : (
       <YouTube
         width={width}
