@@ -1,4 +1,5 @@
 import React from 'react'
+import { Motion, spring } from 'react-motion'
 import { render } from 'react-dom'
 import axios from 'axios'
 import YouTube from './YouTube'
@@ -17,28 +18,38 @@ class App extends React.Component {
 
   loadNext() {
     this.setState({ id: null })
-    axios.get('/find-random-video').then(
-      response => {
-        this.setState({ id: response.data.id })
-      },
-      () => location.reload()
-    )
+
+    // wait a little on the loading
+    // so that people understand what
+    // is going on
+    setTimeout(() => {
+      axios.get('/find-random-video').then(
+        response => {
+          this.setState({ id: response.data.id })
+        },
+        () => location.reload()
+      )
+    }, 2000)
   }
 
   render() {
     const { width, height, id } = this.state
 
-    return !id ? (
-      <Loading width={width} height={height} />
-    ) : (
-      <YouTube
-        width={width}
-        height={height}
-        videoId={id}
-        onEnd={() => this.loadNext()}
-        onError={() => this.loadNext()}
-      />
-    )
+    return [
+      <Motion defaultStyle={{ opacity: 1 }} style={{ opacity: spring(id ? 0 : 1) }}>
+        {style =>
+          style.opacity > 0.01 && <Loading width={width} height={height} opacity={style.opacity} />}
+      </Motion>,
+      id && (
+        <YouTube
+          width={width}
+          height={height}
+          videoId={id}
+          onEnd={() => this.loadNext()}
+          onError={() => this.loadNext()}
+        />
+      ),
+    ]
   }
 }
 

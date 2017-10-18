@@ -3,39 +3,39 @@ import Bubbles from './Bubbles'
 
 export default class Welcome extends React.Component {
   render() {
-    const { width, height } = this.props
+    const { width, height, opacity } = this.props
 
     const containerStyle = {
+      background: '#E64369',
+      color: 'white',
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'center',
-      color: 'white',
-      background: '#E64369',
       fontFamily: 'Helvetica Neue, Helvetica',
-      fontWeight: '100',
       fontSize: 30,
-      position: 'absolute',
-      top: 0,
-      left: 0,
+      fontWeight: '100',
       height: height,
-      width: width,
+      justifyContent: 'center',
+      left: 0,
+      position: 'absolute',
       textAlign: 'center',
+      top: 0,
+      width: width,
     }
 
     const openSourceProject = {
       color: 'white',
-      textDecoration: 'none',
-      position: 'absolute',
-      top: 0,
-      right: 0,
-      margin: 0,
       fontSize: 16,
-      padding: 5,
+      margin: 0,
       opacity: 0.5,
+      padding: 5,
+      position: 'absolute',
+      right: 0,
+      textDecoration: 'none',
+      top: 0,
     }
 
     return (
-      <div style={containerStyle}>
+      <div style={{ ...containerStyle, opacity: opacity }}>
         <p>
           <Bubbles />
         </p>
