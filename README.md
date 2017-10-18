@@ -1,4 +1,6 @@
-# unbubble.space
+# <img src='https://github.com/pirelenito/unbubble/raw/master/banner.png' title='Unbubble' />
+
+[![Build Status](https://travis-ci.org/pirelenito/unbubble.svg)](https://travis-ci.org/pirelenito/unbubble)
 
 Finding meaning through chaos.
 
