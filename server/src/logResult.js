@@ -6,7 +6,8 @@ fs.ensureFileSync(logPath)
 
 module.exports = result =>
   new Promise((resolve, reject) => {
-    fs.appendFile(logPath, `${JSON.stringify(result)}\n`, function(err) {
+    const resultWithTimestamp = Object.assign({}, result, { timestamp: Date.now() })
+    fs.appendFile(logPath, `${JSON.stringify(resultWithTimestamp)}\n`, function(err) {
       if (err) return reject(err)
       resolve(result)
     })
