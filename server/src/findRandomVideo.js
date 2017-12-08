@@ -4,9 +4,7 @@ const querystring = require('querystring')
 
 const extractTitle = response => {
   const $ = cheerio.load(response.data)
-  const title = $('title')
-    .text()
-    .replace(' - Wikipedia', '')
+  const title = $('#firstHeading').text()
 
   return title
 }
@@ -24,7 +22,12 @@ const extractVideoId = response => {
   return id
 }
 
-const fetchRandomWikipediaArticle = () => axios.get('https://en.wikipedia.org/wiki/Special:Random')
+const fetchRandomWikipediaArticle = () => {
+  const languages = ['en', 'ja', 'es', 'ru', 'fr', 'de', 'it', 'pt', 'zh', 'pl']
+  const sortedLanguage = languages[Math.floor(Math.random() * languages.length)]
+
+  return axios.get(`https://${sortedLanguage}.wikipedia.org/wiki/Special:Random`)
+}
 
 const fetchYouTubeSearchResults = topic =>
   axios.get(`https://www.youtube.com/results?search_query=${querystring.escape(topic)}`)
