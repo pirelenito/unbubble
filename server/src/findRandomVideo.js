@@ -23,7 +23,7 @@ const extractVideoId = response => {
 }
 
 const fetchRandomWikipediaArticle = () => {
-  const languages = ['en', 'ja', 'es', 'ru', 'fr', 'de', 'it', 'pt', 'zh', 'pl']
+  const languages = ['en', 'ja', 'es', 'ru', 'fr', 'de', 'it', 'pt', 'zh', 'pl', 'sv']
   const sortedLanguage = languages[Math.floor(Math.random() * languages.length)]
 
   return axios.get(`https://${sortedLanguage}.wikipedia.org/wiki/Special:Random`)
