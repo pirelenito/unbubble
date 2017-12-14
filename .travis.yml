@@ -9,10 +9,10 @@ services:
   - docker
 
 before_install:
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 
 script:
   - docker build -t pirelenito/unbubble:latest .
 
 after_success:
-- test $TRAVIS_BRANCH == "master" && docker push pirelenito/unbubble:latest
+  - test $TRAVIS_BRANCH == "master" && docker push pirelenito/unbubble:latest
