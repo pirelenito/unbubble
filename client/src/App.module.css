@@ -1,0 +1,33 @@
+.header {
+  height: 40px;
+  line-height: 40px;
+  padding-left: 16px;
+}
+
+.seeMore {
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+.descriptionContainer {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+
+  line-height: 1.4em;
+  margin-bottom: 20px;
+
+  text-align: justify;
+}
+
+.description {
+  max-width: 400px;
+}
+
+p {
+  margin: 12px 0px;
+}
+
+a {
+  color: white;
+}

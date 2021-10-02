@@ -6,7 +6,7 @@ const logResult = require('./logResult')
 const port = process.env.PORT || 3001
 const app = express()
 
-app.use(express.static(path.join(__dirname, '../../client/dist')))
+app.use(express.static(path.join(__dirname, '../../client/build')))
 
 app.get('/find-random-video', async function (req, res) {
   const result = await findRandomVideo()
