@@ -1,12 +1,10 @@
-# <img src='https://github.com/pirelenito/unbubble/raw/master/banner.png' title='Unbubble' />
-
-[![Build Status](https://travis-ci.org/pirelenito/unbubble.svg)](https://travis-ci.org/pirelenito/unbubble)
+# unbubble
 
 Finding meaning through chaos.
 
 An experiment on exploring videos in YouTube.
 
-http://unbubble.space/
+![Screenshot](screenshot.png)
 
 ## How it works?
 
