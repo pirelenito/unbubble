@@ -3,3 +3,5 @@ server/node_modules
 node_modules
 .git
 Makefile
+.yarn/cache
+.yarn/install-state.gz
