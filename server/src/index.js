@@ -8,13 +8,14 @@ const app = express()
 
 app.use(express.static(path.join(__dirname, '../../client/dist')))
 
-app.get('/find-random-video', function(req, res) {
-  findRandomVideo()
-    .then(logResult)
-    .then(({ videoId }) => res.json({ id: videoId }))
-    .catch(err => res.status(500).send(err.message))
+app.get('/find-random-video', async function (req, res) {
+  const result = await findRandomVideo()
+  logResult(result)
+
+  const { videoId } = result
+  res.json({ id: videoId })
 })
 
-app.listen(port, function() {
+app.listen(port, function () {
   console.log(`Listening on port ${port}!`)
 })

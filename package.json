@@ -1,13 +1,10 @@
 {
   "name": "unbubble-space",
-  "version": "1.0.0",
-  "description": "Finding meaning through chaos.",
-  "main": "index.js",
+  "workspaces": [
+    "server"
+  ],
   "private": true,
   "scripts": {
-    "start": "cd server && npm start"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "server": "yarn workspace server start"
+  }
 }
