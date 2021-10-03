@@ -3,7 +3,7 @@ import { renderToString } from 'react-dom/server'
 import App from './App'
 import preview from './preview.png'
 
-export default function({ htmlWebpackPlugin }) {
+export default function ({ htmlWebpackPlugin }) {
   return `
     <!DOCTYPE html>
     <html>

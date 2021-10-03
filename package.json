@@ -8,6 +8,10 @@
   "scripts": {
     "build": "yarn workspace client build",
     "client": "yarn workspace client start",
-    "start": "yarn workspace server start"
+    "start": "yarn workspace server start",
+    "format": "prettier --write \"**/*.@(json|js|css|mdx|md|tsx|ts)\""
+  },
+  "devDependencies": {
+    "prettier": "^2.4.1"
   }
 }
